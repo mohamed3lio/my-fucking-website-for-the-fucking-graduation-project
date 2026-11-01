@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Website for the Graduation Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1418;--sf:#142027;--sf2:#1a2931;--ink:#e6eef1;--mut:#90a5b0;--ln:#25363f;--ac:#3cc9c0;--acs:#12403f;--am:#f0b429;--road:#0a1014;--sh:none;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 "IBM Plex Sans Arabic",Tahoma,Arial,sans-serif}
+.w{max-width:1080px;margin:0 auto;padding:20px 16px 64px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.3;margin:0;font-weight:700}
+.id{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.me{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:3px solid var(--ac);box-shadow:var(--sh);flex:none}
+h1[dir=ltr]{text-align:left;max-width:20ch}
+button,input,select{font:inherit;color:inherit}
+.btn{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:6px 14px;cursor:pointer}
+.btn:hover{border-color:var(--ac)}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.hero{background:var(--sf);border:1px solid var(--ln);border-radius:20px;padding:20px;box-shadow:var(--sh)}
+.road{position:relative;height:92px;margin:6px 0 10px;background:var(--road);border-radius:14px;overflow:hidden}
+.road:before{content:"";position:absolute;inset-inline:0;top:50%;height:3px;transform:translateY(-50%);background:repeating-linear-gradient(to left,#e9edf0 0 18px,transparent 18px 34px);opacity:.55}
+.fl{position:absolute;top:0;bottom:0;width:0;border-inline-start:1px dashed rgba(255,255,255,.25)}
+.fl b{position:absolute;top:4px;inset-inline-end:5px;font-size:.7rem;font-weight:500;color:#aebdc6}
+.fin{position:absolute;inset-inline-end:0;top:0;bottom:0;width:10px;background:repeating-conic-gradient(#fff 0 25%,#111 0 50%) 0 0/10px 10px}
+#car{position:absolute;top:50%;margin-top:-22px;width:56px;height:44px;transition:inset-inline-start .8s cubic-bezier(.3,.9,.3,1)}
+.meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.big{font-size:2rem;font-weight:700;line-height:1.1}
+.big small{font-size:1rem;color:var(--mut);font-weight:400}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.st{background:var(--sf2);border-radius:12px;padding:10px 14px}
+.st span{display:block;color:var(--mut);font-size:.85rem}
+.st b{font-size:1.25rem}
+input[type=date],input[type=number],input.nm{background:var(--sf2);border:1px solid var(--ln);border-radius:8px;padding:4px 8px}
+nav{display:flex;gap:6px;margin:22px 0 14px;overflow-x:auto;padding-bottom:4px}
+nav button{border:0;background:transparent;padding:8px 16px;border-radius:999px;cursor:pointer;color:var(--mut);white-space:nowrap;font-weight:500}
+nav button[aria-selected=true]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--ln);background:var(--sf);border-radius:999px;padding:2px 12px;font-size:.85rem;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ac);color:#0c1418;border-color:var(--ac)}
+details{background:var(--sf);border:1px solid var(--ln);border-radius:16px;margin-bottom:10px;box-shadow:var(--sh)}
+summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+.no{width:38px;height:38px;border-radius:10px;background:var(--acs);color:var(--ac);display:grid;place-items:center;font-weight:700}
+.cur .no{background:var(--am);color:#0c1418}
+.ttl{font-weight:600}.dt{color:var(--mut);font-size:.85rem}
+.bar{height:6px;background:var(--ln);border-radius:9px;overflow:hidden;min-width:70px}
+.bar i{display:block;height:100%;background:var(--ac);width:0;transition:width .4s}
+.bd{padding:0 16px 16px}
+.goal{background:var(--sf2);border-radius:10px;padding:8px 12px;margin-bottom:8px;font-size:.92rem}
+.tk{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px solid var(--ln)}
+.tk input{margin-top:7px;width:18px;height:18px;accent-color:var(--ac);flex:none}
+.tk.dn span{text-decoration:line-through;color:var(--mut)}
+.bg{flex:none;min-width:34px;text-align:center;font-size:.78rem;font-weight:600;border-radius:7px;padding:1px 6px;margin-top:2px;background:var(--acs);color:var(--ac)}
+.bg.L{background:var(--am);color:#0c1418}
+.dl{margin-top:8px;border-inline-start:3px solid var(--am);padding:2px 10px;font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:14px;box-shadow:var(--sh)}
+.card h3{margin:0 0 2px;font-size:1.05rem}
+.card .rl{color:var(--mut);font-size:.88rem;margin-bottom:8px}
+.card ul{margin:8px 0 0;padding:0;list-style:none;font-size:.9rem}
+.card li{display:flex;gap:8px;padding:3px 0}
+.tb{width:100%;border-collapse:collapse;background:var(--sf);border:1px solid var(--ln);border-radius:14px;overflow:hidden}
+.tb th,.tb td{padding:8px 12px;text-align:start;border-bottom:1px solid var(--ln)}
+.tb th{background:var(--sf2);font-weight:600;font-size:.88rem}
+.sc{overflow-x:auto;border-radius:14px}
+.tot{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-weight:600}
+.wn{border-inline-start:4px solid var(--am)}
+.ct{margin:14px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="w">
+<header>
+ <div class="id">
+  <img class="me" alt="صورة صاحب المشروع" src="https://i.postimg.cc/HnMKM3v5/Whats-App-Image-2026-10-28-at-9-58-52-PM.jpg">
+  <h1 lang="en" dir="ltr">My Fucking Website for the Graduation Project</h1>
+ </div>
+</header>
+
+<section class="hero" aria-label="التقدم الكلي">
+ <div class="meta">
+  <div class="big"><span id="pct">0</span>٪ <small id="cnt"></small></div>
+  <label>بداية المشروع: <input type="date" id="start"></label>
+ </div>
+ <div class="road" id="road" role="img" aria-label="شريط تقدم العربية على الطريق"></div>
+ <div class="stats">
+  <div class="st"><span>السبرينت الحالي</span><b id="cur">حدد تاريخ البداية</b></div>
+  <div class="st"><span>الأيام المتبقية للتسليم</span><b id="left">-</b></div>
+  <div class="st"><span>مهام متبقية</span><b id="rem">-</b></div>
+  <div class="st"><span>الميزانية المسجلة</span><b id="bud">0 جنيه</b></div>
+ </div>
+</section>
+
+<nav role="tablist" id="nav">
+ <button role="tab" data-tab="sp" aria-selected="true">السبرينتات</button>
+ <button role="tab" data-tab="tm" aria-selected="false">الفريق</button>
+ <button role="tab" data-tab="bm" aria-selected="false">المشتريات والميزانية</button>
+ <button role="tab" data-tab="nt" aria-selected="false">الأمان والمتابعة</button>
+</nav>
+<main id="view"></main>
+<p class="ct"><button class="btn" id="rs">مسح كل البيانات</button></p>
+</div>
+
+<script>
+const S=[
+{t:"التخطيط والتصميم",g:"كل حاجة تتحدد على الورق قبل ما نشتري.",d:"ملف المواصفات + CAD أولي + BOM + مخطط التوصيلات + الميزانية",k:["M1|تصميم الشاسي على CAD وحساب الأحمال","M2|اختيار نظام العفشة والتوجيه ورسمه","M2|اختيار فانوس ليد أمامي 12 فولت وليد خلفي مع زرار وفيوز","M3|اختيار الفرامل والكرسي ونقل الحركة","E1|حساب القدرة المطلوبة واختيار الموتور والكنترولر","E1|رسم مخطط التوصيلات وحساب مقاسات الكابلات","E2|حساب سعة البطارية واختيار النوع والعدد","D1|اختيار نوع الشاشة وتصميم الواجهة","D2|اختيار المتحكم والحساسات وطريقة قياس السرعة والبطارية","D2|اختيار البازر والاهتزاز وتصميم دايرة التشغيل","A1|اختيار موديل Pi والكاميرا وتجربة تشغيلها","A2|دراسة طرق كشف العين واختيار الأنسب","L|تجميع BOM والميزانية والجدول الزمني"]},
+{t:"الشراء وبداية التنفيذ",g:"نشتري ونبدأ نجرب كل جزء لوحده.",d:"نصف الشاسي + موتور شغال على الطاولة + شاشة ببيانات تجريبية + كشف عين أولي",k:["M1|شراء المواسير وبدء القص واللحام","M2|شراء أجزاء العفشة والتوجيه","M2|شراء الفانوس الأمامي والليد الخلفي وزرار التشغيل والفيوز","M3|شراء الفرامل والكرسي","E1|تجربة الموتور مع الكنترولر على Bench وعكس الاتجاه","E2|شراء البطاريات وتجميعها وتركيب الفيوزات","E2|تجهيز الكابلات والكونكتورات ولوحة التوزيع","D1|تشغيل الشاشة وعرض بيانات تجريبية","D2|قراءة حساس السرعة وجهد البطارية على Breadboard","D2|تشغيل البازر والاهتزاز من المتحكم","A1|تشغيل Pi والكاميرا وبث الفيديو","A2|كشف الوجه والعين على الفيديو","L|متابعة المشتريات وتسجيل الفواتير"]},
+{t:"الهيكل والمكونات الأساسية",g:"العربية تبقى هيكل كامل بعفشة وتوجيه.",d:"عربية بشاسي وعفشة وتوجيه + خوارزمية نعاس على Pi + واجهة شبه نهائية",k:["M1|الشاسي كامل ومدهون","M1|تجهيز مكان تثبيت الفانوس الأمامي والليد الخلفي","M2|تركيب العفشة والتوجيه","M3|تركيب الكرسي وبدء الفرامل","E1|تثبيت الموتور ووصل نقل الحركة مع M3","E1|كابلات القدرة الرئيسية","E2|حزمة البطارية مثبتة مع قاطع الطوارئ","D1|واجهة الشاشة النهائية: سرعة واتجاه وبطارية","D2|معايرة حساسات السرعة والبطارية","A1|تثبيت الكاميرا في مكانها المتوقع","A2|حساب EAR وضبط عتبة 1.5 ثانية","A2|برنامج الإنذار والاهتزاز عند وصول الإشارة"]},
+{t:"أول حركة للعربية",g:"العربية تتحرك لقدام ولورا وتفرمل.",d:"فيديو حركة أمام وورا + فرامل شغالة + نظام النعاس شغال على الطاولة",k:["M1|ضبط الشاسي","M2|ضبط التوجيه","M2|ترتيب الأسلاك وتثبيتها","M3|الفرامل شغالة ومتجربة","E1|أول تشغيل بدون سواق على مسافة قصيرة","E2|اختبار تفريغ البطارية","D1|عرض بيانات الحساسات الحقيقية على الشاشة","D2|إرسال بيانات الحساسات للمتحكم من على العربية","A1|إرسال إشارة النعاس من Pi للمتحكم","A2|تجربة النظام كامل: كاميرا ثم Pi ثم بازر واهتزاز","L|تصوير فيديو أول حركة وتجميعه"]},
+{t:"التجميع الكامل وعرض المنتصف",g:"كل المكونات مركبة على العربية.",d:"عربية بكل المكونات + عرض تجريبي للجنة المتابعة",k:["D1|تركيب الشاشة والتابلوه","D2|توصيل الحساسات على العربية","A1|تركيب Pi والكاميرا","M3|تركيب موتور الاهتزاز في الكرسي أو الدركسيون","E1|توصيل كل الأنظمة على الطاقة ومحول 5V للـ Pi","M1|تحسينات الهيكل والتقوية","M3|إزالة الحواف الحادة وتأمين الكرسي","M2|تركيب الفانوس الأمامي والليد الخلفي","E2|توصيل الفانوس والليد بزرار وفيوز","L|تجهيز عرض منتصف المشروع"]},
+{t:"ربط النظام ببعضه",g:"الأنظمة الأربعة تشتغل كأنها نظام واحد.",d:"نظام متكامل بيشتغل كله مع بعض",k:["D1|عرض حالة النعاس على الشاشة (تنبيه!)","A1|تشغيل برنامج الكشف تلقائياً عند تشغيل العربية وتحسين سرعة الاستجابة","E1|اختياري: تقليل السرعة أو قطع الدواسة لو السواق ما صحيش","A2|تحسين الدقة: نضارة وإضاءة مختلفة ووضع الراس","D2|نسبة البطارية بالجهد + تكامل التيار","E2|معايرة البطارية مع D2","M1|فحص اللحامات والمسامير وتقوية نقاط الضعف بعد التجارب","M3|ضبط الفرامل وحزام الأمان بعد التجارب","L|مراجعة التكامل وحل التعارضات"]},
+{t:"الاختبارات",g:"كل رقم نقوله في المناقشة يكون متسجل.",d:"تقرير اختبارات بأرقام + قائمة أخطاء وإصلاحها",k:["M3|اختبار الفرامل بسرعات مختلفة","M1|ثبات الشاسي بحمل سواق حقيقي","M2|اختبار الإضاءة في الضلمة ومدى الرؤية","E1|السرعة القصوى وحرارة الموتور والكنترولر","E2|المدى على شحنة كاملة","E2|اختبار قاطع الطوارئ والفيوزات","D1|قراءة الشاشة في الشمس والاهتزاز","D2|اختبار دقة قراءة السرعة ونسبة البطارية","A2|10 تجارب نعاس على الأقل بأشخاص وإضاءات مختلفة","A1|تسجيل نسب النجاح والأخطاء","L|تجميع تقرير الاختبارات"]},
+{t:"التسليم النهائي",g:"العربية والكتاب والعرض والفيديو جاهزين.",d:"العربية جاهزة + الكتاب النهائي + العرض + الفيديو",k:["M1|دهان وتجميل العربية وفصل الميكانيكا","M2|فصل العفشة والتوجيه والإضاءة","M3|فصل الفرامل والكرسي والأمان","E1|فصل القدرة الكهربائية","E2|تغطية الأسلاك والملصقات وفصل البطاريات","D1|فصل التابلوه","D2|فصل الحساسات والمتحكم","A1|تصوير الفيديو التوثيقي وفصل Pi والكاميرا","A2|فصل كشف النعاس","L|تجميع الكتاب ومراجعته","L|العرض التقديمي وبروفة مناقشة 3 مرات"]}];
+const M={L:["القائد","متابعة السبرينتات والمشتريات والميزانية والتجميع النهائي والتوثيق"],M1:["ميكانيكا","الشاسي: CAD ولحام وتصنيع وتقوية وتجهيز أماكن التثبيت"],M2:["ميكانيكا","العفشة المستقلة والتوجيه والإضاءة (فانوس أمامي وليد خلفي) وترتيب الأسلاك"],M3:["ميكانيكا","الفرامل والكرسي وحزام الأمان ونقل الحركة وموتور الاهتزاز"],E1:["قدرة","الموتور BLDC والكنترولر والدواسة والعكس ومحول DC-DC ومخطط التوصيلات والكابلات الرئيسية"],E2:["قدرة","البطاريات والحماية (فيوزات وقاطع طوارئ) والشحن ولوحة التوزيع واختبارات البطارية"],D1:["تابلوه","الشاشة TFT وبرمجة الواجهة وعرض البيانات والتنبيه"],D2:["تابلوه","المتحكم والحساسات ونسبة الشحن والبازر ودايرة الاهتزاز"],A1:["نعاس","Pi والكاميرا وإضاءة IR وإرسال إشارة النعاس والفيديو التوثيقي"],A2:["نعاس","خوارزمية كشف العين EAR وبرنامج الإنذار وتجارب الدقة"]};
+const B=[["مواسير حديد وخامات الشاسي","M1"],["قطع العفشة والتوجيه","M2"],["فرامل ديسك","M3"],["كرسي وحزام أمان","M3"],["ترس أو جنزير نقل الحركة","M3"],["موتور BLDC","E1"],["كنترولر يدعم العكس","E1"],["دواسة","E1"],["بطاريات Deep Cycle","E2"],["فيوزات وقاطع طوارئ","E2"],["شاحن البطارية","E2"],["كابلات وكونكتورات","E2"],["محول DC-DC إلى 5V","E1"],["شاشة TFT","D1"],["متحكم ESP32 أو STM32","D2"],["حساس سرعة Hall","D2"],["حساس جهد وتيار INA226","D2"],["Raspberry Pi 4 أو 5","A1"],["كاميرا مع إضاءة IR","A1"],["بازر","D2"],["موتور اهتزاز وترانزستور أو ريليه","D2"],["فانوس ليد أمامي 12 فولت","M2"],["ليد خلفي وعاكس","M2"],["زرار تشغيل الإضاءة وفيوز صغير","M2"],["دهان وملصقات","M1"]];
+const N=[["الأمان أولاً","قاطع طوارئ سهل الوصول، وفيوز رئيسي على البطارية، وأول التجارب بدون سواق."],["الكنترولر","لازم يدعم الحركة العكسية. اتأكد قبل الشراء."],["كاميرا IR","مهمة للضلمة والشمس القوية."],["الاهتزاز","يتركب في الكرسي أو الدركسيون عشان السواق يحس بيه فعلاً."],["وزن البطارية","Deep Cycle ثقيلة. احسب وزنها من أول سبرينت وركزها في مكان منخفض في الشاسي."],["الحد الأدنى للنجاح","عربية بتتحرك + شاشة + نظام نعاس بإنذار. أي ميزة زيادة (قطع الدواسة) تتأجل لو الوقت ضاق."],["الإضاءة","فانوس ليد أمامي 12 فولت (10 إلى 20 وات) بزرار وفيوز، وليد خلفي اختياري. مهمة لو التجربة أو المناقشة في مكان ضلمة."],["الاجتماعات","اجتماع أسبوعي 30 دقيقة، وآخر يوم في كل سبرينت Demo قصير لكل فريق."],["الأدوات","Trello أو Notion للمهام، ومجلد مشترك للتصميمات، وGitHub للأكواد."],["أدوار مقترحة","واحد مسؤول عن المشتريات وواحد عن توثيق الصور والفيديوهات."]];
+const T=[];S.forEach((s,i)=>s.k.forEach((x,j)=>{const[m,t]=x.split("|");T.push({id:i+"."+j,s:i,m,t})}));
+let st={done:{},names:{},start:"",bom:{},tab:"sp",flt:"all"};
+try{Object.assign(st,JSON.parse(localStorage.getItem("evhub1")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("evhub1",JSON.stringify(st))}catch(e){}};
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const nm=m=>esc(st.names[m]||m),DAY=864e5;
+const fd=d=>d.toLocaleDateString("ar-EG",{day:"numeric",month:"short"});
+const sd=i=>st.start?new Date(new Date(st.start).getTime()+i*14*DAY):null;
+const prog=a=>{const d=a.filter(t=>st.done[t.id]).length;return[d,a.length,a.length?Math.round(d/a.length*100):0]};
+const curS=()=>{if(!st.start)return-1;return Math.floor((Date.now()-new Date(st.start))/DAY/14)};
+
+function hero(){
+ const f=[...Array(8)].map((_,i)=>`<div class="fl" style="inset-inline-start:${i*12.5}%"><b>س${i+1}</b></div>`).join("");
+ $("#road").innerHTML=f+`<div class="fin"></div><svg id="car" viewBox="0 0 56 44" aria-hidden="true"><rect x="6" y="14" width="40" height="16" rx="6" fill="#3cc9c0"/><rect x="18" y="6" width="18" height="12" rx="5" fill="#e6eef1"/><circle cx="10" cy="32" r="8" fill="#0b1217" stroke="#9fb3bd" stroke-width="2"/><circle cx="42" cy="32" r="8" fill="#0b1217" stroke="#9fb3bd" stroke-width="2"/><rect x="46" y="18" width="8" height="5" rx="2" fill="#f0b429"/></svg>`;
+}
+function upd(){
+ const[d,n,p]=prog(T);
+ $("#pct").textContent=p;$("#cnt").textContent=`(${d} من ${n} مهمة)`;
+ $("#car").style.insetInlineStart=`calc(${Math.min(p,100)}% - ${p/100*56}px)`;
+ $("#rem").textContent=n-d;
+ const c=curS();
+ $("#cur").textContent=!st.start?"حدد تاريخ البداية":c<0?"لسه ما بدأ":c>7?"انتهت المدة":`س${c+1}: ${S[c].t}`;
+ $("#left").textContent=!st.start?"-":Math.max(0,Math.ceil((new Date(st.start).getTime()+112*DAY-Date.now())/DAY))+" يوم";
+ let tot=0;Object.values(st.bom).forEach(b=>tot+=+b.p||0);$("#bud").textContent=tot.toLocaleString("ar-EG")+" جنيه";
+ S.forEach((s,i)=>{const e=$("#sp"+i);if(e){const[a,b,q]=prog(T.filter(t=>t.s==i));e.style.width=q+"%";$("#spt"+i).textContent=`${a}/${b}`}});
+ Object.keys(M).forEach(m=>{const e=$("#tm"+m);if(e){const[a,b,q]=prog(T.filter(t=>t.m==m));e.style.width=q+"%";$("#tmt"+m).textContent=`${a}/${b}`}});
+}
+const task=t=>`<label class="tk ${st.done[t.id]?"dn":""}"><input type="checkbox" data-t="${t.id}" ${st.done[t.id]?"checked":""}><span class="bg ${t.m=="L"?"L":""}">${nm(t.m)}</span><span>${t.t}</span></label>`;
+function vSp(){
+ const c=curS();
+ return `<div class="chips">${["all",...Object.keys(M)].map(m=>`<button class="chip" data-f="${m}" aria-pressed="${st.flt==m}">${m=="all"?"الكل":nm(m)}</button>`).join("")}</div>`+
+ S.map((s,i)=>{const ts=T.filter(t=>t.s==i&&(st.flt=="all"||t.m==st.flt));const d=sd(i);
+ if(!ts.length)return"";
+ return `<details class="${c==i?"cur":""}" ${c==i||(c<0&&i==0&&st.flt=="all")?"open":""}><summary><span class="no">${i+1}</span><span><div class="ttl">${s.t}${c==i?" (الحالي)":""}</div><div class="dt">أسبوع ${i*2+1}-${i*2+2}${d?" | "+fd(d)+" إلى "+fd(new Date(d.getTime()+13*DAY)):""}</div></span><span><div class="bar"><i id="sp${i}"></i></div><div class="dt" id="spt${i}" style="text-align:center"></div></span></summary><div class="bd"><div class="goal">الهدف: ${s.g}</div>${ts.map(task).join("")}<div class="dl"><b>التسليم:</b> ${s.d}</div></div></details>`}).join("");
+}
+const vTm=()=>`<div class="grid">${Object.keys(M).map(m=>`<div class="card"><h3>${m}: <input class="nm" data-n="${m}" value="${esc(st.names[m]||"")}" placeholder="اكتب الاسم" aria-label="اسم ${m}" size="14"></h3><div class="rl">${M[m][0]}. ${M[m][1]}</div><div class="bar"><i id="tm${m}"></i></div><div class="dt" id="tmt${m}"></div><ul>${T.filter(t=>t.m==m).map(t=>`<li><input type="checkbox" data-t="${t.id}" ${st.done[t.id]?"checked":""} style="accent-color:var(--ac)"><span><b>س${t.s+1}</b> ${t.t}</span></li>`).join("")}</ul></div>`).join("")}</div>`;
+const vBm=()=>`<div class="sc"><table class="tb"><tr><th>تم</th><th>البند</th><th>المسؤول</th><th>السعر (جنيه)</th></tr>${B.map((b,i)=>{const x=st.bom[i]||{};return `<tr><td><input type="checkbox" data-b="${i}" ${x.c?"checked":""} style="accent-color:var(--ac)" aria-label="تم شراء ${b[0]}"></td><td>${b[0]}</td><td>${nm(b[1])}</td><td><input type="number" min="0" data-p="${i}" value="${x.p||""}" style="width:110px" aria-label="سعر ${b[0]}"></td></tr>`}).join("")}</table></div><div class="tot"><span>إجمالي المسجل: <span id="t1"></span></span><span>اللي اتشترى فعلاً: <span id="t2"></span></span></div>`;
+const vNt=()=>`<div class="grid">${N.map(n=>`<div class="card wn"><h3>${n[0]}</h3><p style="margin:4px 0 0">${n[1]}</p></div>`).join("")}</div>`;
+function bt(){let a=0,b=0;B.forEach((_,i)=>{const x=st.bom[i]||{};a+=+x.p||0;if(x.c)b+=+x.p||0});if($("#t1")){$("#t1").textContent=a.toLocaleString("ar-EG")+" جنيه";$("#t2").textContent=b.toLocaleString("ar-EG")+" جنيه"}}
+function view(){$("#view").innerHTML={sp:vSp,tm:vTm,bm:vBm,nt:vNt}[st.tab]();document.querySelectorAll("#nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab==st.tab));upd();bt()}
+document.addEventListener("click",e=>{const t=e.target;
+ if(t.dataset.tab){st.tab=t.dataset.tab;save();view()}
+ if(t.dataset.f){st.flt=t.dataset.f;save();view()}});
+document.addEventListener("change",e=>{const t=e.target;
+ if(t.dataset.t){st.done[t.dataset.t]=t.checked;if(!t.checked)delete st.done[t.dataset.t];t.closest(".tk")&&t.closest(".tk").classList.toggle("dn",t.checked);save();upd()}
+ if(t.dataset.b){(st.bom[t.dataset.b]=st.bom[t.dataset.b]||{}).c=t.checked;save();bt()}
+ if(t.id=="start"){st.start=t.value;save();view()}});
+document.addEventListener("input",e=>{const t=e.target;
+ if(t.dataset.p){(st.bom[t.dataset.p]=st.bom[t.dataset.p]||{}).p=t.value;save();upd();bt()}
+ if(t.dataset.n){st.names[t.dataset.n]=t.value;save()}});
+$("#rs").onclick=()=>{if(confirm("تمسح كل المهام والأسماء والأسعار؟")){try{localStorage.removeItem("evhub1")}catch(e){}st={done:{},names:{},start:"",bom:{},tab:"sp",flt:"all"};$("#start").value="";view()}};
+$("#start").value=st.start;hero();view();
+</script>
+</body>
+</html>
